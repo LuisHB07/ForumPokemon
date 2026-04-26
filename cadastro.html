@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeTeam - Cadastro</title>
+    <link rel="stylesheet" href="styles/cadastro.css">
+</head>
+<body>
+    <div class="main">
+        <div class="formulario">
+            <h2>Cadastre-se</h2>
+            <input type="text" id="ipt_nome" placeholder="Nome">
+            <input type="text" id="ipt_email" placeholder="Email">
+            <input type="password" id="ipt_senha" placeholder="Senha">
+            <input type="password" id="ipt_confirmar" placeholder="Confirmar Senha">
+            <button onclick="registrar()">Registrar</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function registrar(){
+        window.location.href = `index.html`;
+    }
+</script>

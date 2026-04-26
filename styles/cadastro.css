@@ -1,0 +1,63 @@
+
+@font-face{
+    font-family: '8BIT';
+    src: url(../assets/font/PressStart2P-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    margin: 0px;
+}
+
+
+.main{
+    display: flex;
+    background-image: url("../assets/img/cadastroBg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 17%;
+    align-items:center;
+    min-height: 100vh;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(228, 11, 11, 0.6);
+    border: 4px solid black;
+    padding: 30px;
+    height: 520px;
+    border-radius: 10px;
+    gap: 30px;
+}
+.formulario h2{
+    font-family: '8BIT', sans-serif;
+    font-size: 45px;  
+}
+.formulario input{
+    font-family: '8BIT', sans-serif;
+    border: 3px solid black;
+    outline: none;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: white;
+}
+.formulario input::placeholder{
+    color: gray;
+    font-size: 15px;
+}
+
+.formulario button{
+    font-family: '8BIT', sans-serif;
+    font-size: 10px;
+    color: black;
+    height: 75px;
+    width: 140px;
+    background-color: red;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+}

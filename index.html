@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeTeam - Home</title>
+    <link rel="stylesheet" href="styles/home.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1280px-Pok%C3%A9_Ball_icon.svg.png"
+                alt="home">
+            <h1 class="titulo">PokeTeam</h1>
+        </div>
+        <div class="cadastro-login">
+            <button onclick="cadastrar()">Cadastrar</button>
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="texto-hero">
+            <div class="pokedex">
+                <div class="bola azul"></div>
+                <div class="bola vermelha"></div>
+                <div class="bola amarela"></div>
+            </div>
+            <h2>Monte o seu time da sua maneira e mostre para o mundo!</h2>
+            <p>Escolha seus pokemons favoritos, monte seu time ideal e compartilhe com os outros.</p>
+
+            <div class="como-funciona">
+                <h3>Como funciona?</h3>
+                <div class="cards">
+                    <div class="card">
+                        <span>01</span>
+                        <h4>Cadastre-se</h4>
+                        <p>Crie sua conta gratuitamente e entre para a comunidade de treinadores.</p>
+                    </div>
+                    <div class="card">
+                        <span>02</span>
+                        <h4>Monte seu time</h4>
+                        <p>Escolha até 6 pokémons e monte o time que você acha mais incrível.</p>
+                    </div>
+                    <div class="card">
+                        <span>03</span>
+                        <h4>Mostre para o mundo</h4>
+                        <p>Publique seu time no fórum e veja o que outros treinadores montaram.</p>
+                    </div>
+                </div>
+                <button class="comece" onclick="cadastrar()"> Comece Agora</button>
+            </div>
+        </div>
+        <div class="sobre-mim">
+            <div class="pokedex">
+                <div class="bola azul"></div>
+                <div class="bola vermelha"></div>
+                <div class="bola amarela"></div>
+            </div>
+            <div class="sobre-conteudo">
+                <h3>Sobre mim</h3>
+                <img src="assets/img/euTemp.jpg" alt="">
+                <p>
+                    Eu sou o Luis Henrique Barreira, estudante da SPTech ADS 2026.
+                    Escolhi fazer meu projeto sobre Pokémon porque é uma franquia que sempre 
+                    fez parte da minha vida desde pequeno, joguei todos os jogos principais
+                    da franquia e sempre adorei esse universo. Foi através dos jogos que desenvolvi
+                    meu interesse por tecnologia.
+                </p>
+                <p>
+                    Eu criei o PokeTeam da vontade de unir essa paixão e carinho 
+                    que tenho por Pokémon com o que estou aprendendo na faculdade,
+                    para criar algo que fosse útil, divertido e representativo para todos.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h4>Feito por Luis Henrique Barreira - SPTech 2026</h4>
+    </div>
+</body>
+
+</html>
+<script>
+    function cadastrar() {
+        window.location.href = `cadastro.html`;
+    }
+    function login() {
+        window.location.href = `login.html`;
+    }
+</script>

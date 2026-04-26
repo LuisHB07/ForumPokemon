@@ -5,12 +5,6 @@
     font-style: normal;
 }
 @font-face{
-    font-family: 'Pokemon Hollow';
-    src: url(../assets/font/Pokemon\ Hollow.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face{
     font-family: '8BIT';
     src: url(../assets/font/PressStart2P-Regular.ttf) format('truetype');
     font-weight: normal;
@@ -73,21 +67,169 @@
 
 .main{
     display: flex;
-    height: 500px;
+    flex-direction: column;
     background-image: url("../assets/img/fundo.jpg");
     background-position: center; 
-    align-items: center;
+    background-repeat: no-repeat;
     justify-content: center;
+    background-size: cover;
     padding:30px ;
 }
 
 .main h2{
-    font-family: 'Pokemon Hollow', sans-serif;
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 35px;
+    color: red;
+    -webkit-text-stroke: 1px black;
+}
+.texto-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.45);
+    border: 4px solid red;
+    border-radius: 15px;
+    padding: 50px;
+    position: relative;
+}
+
+.texto-hero p {
+    font-family: '8BIT', sans-serif;
+    font-size: 11px;
+    color: white;
+}
+.como-funciona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+}
+
+.como-funciona h3 {
+    font-family: '8BIT', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+.cards {
+    display: flex;
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.15);
+    border: 3px solid red;
+    border-radius: 15px;
+    padding: 25px;
+    width: 250px;
+    gap: 15px;
+}
+
+.card span {
+    font-family: '8BIT', sans-serif;
+    font-size: 25px;
+    color: red;
+}
+
+.card h4 {
+    font-family: '8BIT', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.card p {
+    font-family: '8BIT', sans-serif;
+    font-size: 10px;
+    color: lightgray;
+    line-height: 1.5;
+}
+.comece{
+    font-family: '8BIT', sans-serif;
+    font-size: 10px;
+    color: white;
+    background-color: rgba(255,0,0,0.5);
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 25px;
+    cursor: pointer;
+}
+.sobre-mim {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.45);
+    border: 4px solid red ;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.sobre-conteudo {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    gap: 25px;
+    text-align: center;
+}
+
+.sobre-conteudo img{
+    width: 300px;
+    height: 300px;
+    align-self: center;
+}
+
+.sobre-conteudo h3 {
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 40px;
+    color: red;
+    -webkit-text-stroke: 1px black;
+}
+
+.sobre-conteudo p {
+    font-family: '8BIT', sans-serif;
+    font-size: 10px;
+    color: lightgray;
+    line-height: 2.2;
+}
+.pokedex {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bola {
+    border: 3px solid black;
+    border-radius: 50%;
+}
+
+.azul {
+    width: 30px;
+    height: 30px;
+    background-color: skyblue;
+}
+
+.vermelha {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+}
+
+.amarela {
+    width: 15px;
+    height: 15px;
+    background-color: yellow;
 }
 
 .footer{
+    font-family: '8BIT', sans-serif;
     display: flex;
     background-color: red;
     align-items: center;
