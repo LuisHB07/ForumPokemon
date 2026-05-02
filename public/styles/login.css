@@ -28,7 +28,7 @@
 }
 
 .card-tematico img{
-    width: 350px;
+    width: 250px;
 }
 
 .card-tematico p{
@@ -44,6 +44,7 @@
     justify-content: center;
     width: 52%;
     background-color: whitesmoke;
+    position: relative;
 }
 
 .formulario{
@@ -71,7 +72,6 @@
     color: gray;
     font-size: 15px;
 }
-
 .formulario button{
     font-family: '8BIT', sans-serif;
     font-size: 10px;
@@ -79,15 +79,47 @@
     height: 75px;
     width: 140px;
     background-color: red;
-    border: 3px solid black;
+    border-color: black;
+    border-width: 3px;
     border-radius: 5px;
     cursor: pointer;
     align-self: center;
 }
 
-.possui-conta{
+.seta-home{
+    font-family: '8BIT', sans-serif;
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+.sem-conta{
     display: flex;
     font-family: '8BIT', sans-serif;
+    gap: 5px;
+}
+.sem-conta a {
+    text-decoration: none;
+    color: blue;
+}
+
+.mensagem-erro{
+    font-family: '8BIT', sans-serif;
+    font-size: 15px;
+    position: absolute;
+    bottom: 200px;
+}
+
+.loading-div {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
 }
 
 .pokedex {

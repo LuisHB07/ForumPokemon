@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PokeTeam - Login</title>
+    <script src="js/sessao.js"></script>
+   <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+   <div class="main">
+      <div class="card-tematico">
+            <div class="pokedex">
+                <div class="bola azul"></div>
+                <div class="bola vermelha"></div>
+                <div class="bola amarela"></div>
+            </div>
+            <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/riolu.gif" alt="">
+            <p>Bem-vindo de volta, Treinador!</p>
+        </div>
+        <div class="card-formulario">
+           <a href="index.html" class="seta-home"><- Voltar</a>
+           <div class="formulario">
+               <h2>Entre na conta</h2>
+               <input type="text" id="ipt_email" placeholder="Email">
+               <input type="password" id="ipt_senha" placeholder="Senha">
+               <div class="sem-conta">
+                  Ainda não tem uma conta?<a href="cadastro.html"> Cadastre-se</a>
+               </div>
+               <button onclick="entrar()">Login</button>
+           </div>
+           <div id="div_mensagem_erro" class="mensagem-erro"></div>
+        </div>
+        <div id="div_aguardar" class="loading-div">
+          <img src="assets/img/carregando.gif" id="loading-gif" />
+        </div>
+    </div>
+</body>
+</html>
+<script>
+   function entrar() {
+      aguardar();
+
+        let emailVar = ipt_email.value;
+        let senhaVar = ipt_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            div_mensagem_erro.innerHTML = `<span style="color: red;">(Preencha todos os campos!)</span>`
+            finalizarAguardar();
+            return false;
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    div_mensagem_erro.innerHTML = `Login realizado com sucesso!`
+                    setTimeout(function () {
+                        window.location = "forum.html";
+                    }, 2000);
+                });
+
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    div_mensagem_erro.innerHTML = `<span style="color: red;">${texto}</span>`
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+</script>
