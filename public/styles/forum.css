@@ -1,0 +1,120 @@
+@font-face{
+    font-family: 'Pokemon Solid';
+    src: url(../assets/font/Pokemon\ Solid.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: '8BIT';
+    src: url(../assets/font/PressStart2P-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0px;
+}
+
+.header{
+    display: flex;
+    background-color: red;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.header img{
+    width: 65px;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.titulo{
+    font-family: 'Pokemon Solid', sans-serif;
+    color: gold;
+    -webkit-text-stroke: 1px blue;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.header-usuario{
+    font-family: '8BIT',sans-serif;
+}
+
+.pagina{
+    display: flex;
+    min-height: 100vh;
+}
+
+.barra-lateral{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(110deg, red, black);
+    width: 200px;
+    min-height: 100%;
+    padding: 10px;
+}
+
+.botao-alternar{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    align-self: flex-end;
+}
+
+.lista-paginas{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.lista-paginas li{
+    font-family: '8BIT', sans-serif;
+    font-size: 10px;
+    color: white;
+    list-style: none;
+    padding: 15px;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 30px;
+    background-color: whitesmoke;
+    gap: 20px;
+}
+
+.criar-time{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    border: 3px solid red;
+}
+
+.criar-time p{
+    font-family: '8BIT', sans-serif;
+    font-size: 15px;
+}
+
+.criar-time button{
+    font-family: '8BIT', sans-serif;
+    font-size: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+}

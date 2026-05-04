@@ -4,8 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeTeam - Forum</title>
+    <script src="js/sessao.js"></script>
+    <link rel="stylesheet" href="styles/forum.css">
 </head>
 <body>
-    
+    <div class="header">
+       <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1280px-Pok%C3%A9_Ball_icon.svg.png"
+                alt="home">
+            <h1 class="titulo">PokeTeam</h1>
+        </div>
+        <div class="header-usuario">
+            <p>Olá,Treinador</p>
+        </div>
+    </div>
+    <div class="pagina">
+        <div class="barra-lateral">
+            <button class="botao-alternar" onclick="alternarBarra()"><-</button>
+            <ul class="lista-paginas">
+                <li>Fórum</li>
+                <li>Seus times</li>
+                <li>Dashboard</li>
+                <li>Sair</li>
+            </ul>
+        </div>
+        <div class="conteudo">
+            <div class="criar-time">
+                <p>Crie seu time agora mesmo</p>
+                <button>+ Criar time</button>
+            </div>
+            <div class="postagens" id="div_postagens">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
