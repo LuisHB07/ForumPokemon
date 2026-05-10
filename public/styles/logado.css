@@ -1,0 +1,127 @@
+@font-face{
+    font-family: 'Pokemon Solid';
+    src: url(../assets/font/Pokemon\ Solid.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: '8BIT';
+    src: url(../assets/font/PressStart2P-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header{
+    display: flex;
+    background-color: red;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+}
+.header img{
+    width: 60px;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.titulo{
+    font-family: 'Pokemon Solid', sans-serif;
+    color: gold;
+    -webkit-text-stroke: 1px blue;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.header-usuario{
+    font-family: '8BIT',sans-serif;
+    margin-right: 20px;
+}
+
+.pagina{
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+
+.barra-lateral{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(110deg, red, black);
+    padding: 5px;
+    transition: width 0.5s ease, padding 0.5s ease;
+    overflow: hidden;
+}
+
+.barra-lateral.fechada{
+    width: 0px;
+    padding: 0;
+}
+
+.botao-alternar{
+    border: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    height: 10px;
+}
+
+.lista-paginas{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0px;
+}
+
+.lista-paginas a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: '8BIT', sans-serif;
+    font-size: 12px;
+    color: white;
+    list-style: none;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.lista-paginas img{
+    width: 30px; 
+    height: 30px;
+}
+
+.botao-sair{
+    font-family: '8BIT', sans-serif;
+    font-size: 10px;
+    background-color: white;
+    color: red;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 30px;
+    gap: 20px;
+    overflow-y: auto;
+}

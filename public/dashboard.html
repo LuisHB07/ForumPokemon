@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeTeam - Forum</title>
+    <title>PokeTeam - Dashboard</title>
     <script src="js/sessao.js"></script>
     <link rel="stylesheet" href="styles/logado.css">
-    <link rel="stylesheet" href="styles/forum.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 <body>
     <div class="header">
@@ -22,32 +22,46 @@
     <div class="pagina">
         <div id="barra_lateral" class="barra-lateral">
             <ul class="lista-paginas">
-                <a><img src="https://cdn-icons-png.flaticon.com/512/6456/6456117.png"><b>Fórum</b></a>
+                <a href="forum.html"><img src="https://cdn-icons-png.flaticon.com/512/6456/6456117.png">Fórum</a>
                 <a href="times.html"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokebola-icon-svg-download-png-4399494.png">Seus times</a>
-                <a href="dashboard.html"><img src="https://www.iconpacks.net/icons/1/free-chart-icon-646-thumb.png">Dashboard</a>
+                <a><img src="https://www.iconpacks.net/icons/1/free-chart-icon-646-thumb.png"><b>Dashboard</b></a>
             </ul>
             <button onclick="limparSessao()" class="botao-sair">Sair</button>
         </div>
         <button id="botao_alternar" class="botao-alternar" onclick="alternarBarra()"><-</button>
         <div class="conteudo">
-            <div class="criar-post">
-                <p>Faça sua postagem</p>
-                <button onclick="fazerPost()">+ Criar post</button>
+            <div class="titulo-dash">
+                <h2>Time atual - Time1</h2><img class="seta" src="assets/img/setaTime.png" alt="">
             </div>
-            <div class="janela" id="janela">
-                <div class="conteudo-janela">
-                    <button onclick="fecharJanela()" class="botao-fechar">X</button>
-                    <div class="conteudo-post">
-                        Titulo do post: <input placeholder="Post 1" type="text" id="ipt_titulo"> 
-                        Selecione o time que você quer: <select id="sele_time_post">
-                            <option value="Time1">Time 1</option>
-                        </select>
-                        Descrição do seu post: <textarea placeholder="Descrição aqui..." id="text-descricao" class="desc-post"></textarea>
+            <div class="kpis">
+                <div class="card">
+                    <p>A</p>
+                    <div class="conteudoKpi">
+                        <img class="kpiImg" src="">
+                        <h3>A</h3>
                     </div>
-                    <button onclick="postar()" class="botao-postar">Fazer post</button>
                 </div>
-            </div>
-            <div class="postagens" id="div_postagens">
+                <div class="card">
+                    <p>B</p>
+                    <div class="conteudoKpi">
+                        <img class="kpiImg" src="">
+                        <h3>B</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <p>C</p>
+                    <div class="conteudoKpi">
+                        <img class="kpiImg" src="">
+                        <h3>C</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <p>D</p>
+                    <div class="conteudoKpi">
+                        <img class="kpiImg" src="">
+                        <h3>D</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -64,10 +78,4 @@
         botao_alternar.innerHTML = '<-'
     }
 }
-    function fazerPost(){
-        janela.style.display = "flex"
-    }
-    function fecharJanela(){
-        janela.style.display = "none"
-    }
 </script>

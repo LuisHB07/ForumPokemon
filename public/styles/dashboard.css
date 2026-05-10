@@ -1,0 +1,48 @@
+@font-face{
+    font-family: 'Pokemon Solid';
+    src: url(../assets/font/Pokemon\ Solid.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: '8BIT';
+    src: url(../assets/font/PressStart2P-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.titulo-dash{
+    display: flex;
+    gap: 5px;
+}
+
+.seta{
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.kpis {
+    display: flex;
+    gap: 10px;
+}
+
+.card {
+    background: white;
+    border: 3px solid red;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.conteudoKpi {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 7px;
+}
+
+.kpiImg {
+    width: 45px;
+}
