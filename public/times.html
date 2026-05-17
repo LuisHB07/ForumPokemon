@@ -9,16 +9,6 @@
     <link rel="stylesheet" href="styles/times.css">
 </head>
 <body>
-    <div class="header">
-       <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1280px-Pok%C3%A9_Ball_icon.svg.png"
-                alt="home">
-            <h1 class="titulo">PokeTeam</h1>
-        </div>
-        <div class="header-usuario">
-            <p id="nome_usuario">Olá,</p>
-        </div>
-    </div>
     <div class="pagina">
         <div id="barra_lateral" class="barra-lateral">
             <ul class="lista-paginas">
@@ -26,6 +16,10 @@
                 <a><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokebola-icon-svg-download-png-4399494.png"><b>Seus times</b></a>
                 <a href="dashboard.html"><img src="https://www.iconpacks.net/icons/1/free-chart-icon-646-thumb.png">Dashboard</a>
             </ul>
+            <div class="usuario">
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/account-white-icon.png">
+                <p id="nome_usuario"></p>
+            </div>
             <button onclick="limparSessao()" class="botao-sair">Sair</button>
         </div>
         <button id="botao_alternar" class="botao-alternar" onclick="alternarBarra()"><-</button>

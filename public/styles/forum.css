@@ -11,6 +11,10 @@
     font-style: normal;
 }
 
+*{
+    font-family: '8BIT', sans-serif;
+}
+
 .criar-post{
     display: flex;
     align-items: center;

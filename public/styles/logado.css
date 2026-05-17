@@ -56,7 +56,7 @@ body{
     display: flex;
     flex: 1;
     overflow: hidden;
-    background-color: whitesmoke;
+    background-color: rgb(226, 226, 226);
 }
 
 .barra-lateral{
@@ -79,6 +79,7 @@ body{
     font-size: 20px;
     cursor: pointer;
     height: 10px;
+    background-color: rgb(226, 226, 226);
 }
 
 .lista-paginas{
@@ -105,6 +106,20 @@ body{
     height: 30px;
 }
 
+.usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    gap: 10px;
+    color: white;
+    font-size: 20px;
+}
+.usuario img{
+    height: 150px;
+    width: 150px;
+}
+
 .botao-sair{
     font-family: '8BIT', sans-serif;
     font-size: 10px;
@@ -114,7 +129,7 @@ body{
     border-radius: 8px;
     padding: 20px;
     cursor: pointer;
-    margin-top: auto;
+    margin-top: 10px;
 }
 
 .conteudo{

@@ -11,6 +11,10 @@
     font-style: normal;
 }
 
+* {
+    font-family: '8BIT', sans-serif;
+}
+
 .titulo-dash{
     display: flex;
     gap: 5px;

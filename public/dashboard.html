@@ -9,16 +9,6 @@
     <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 <body>
-    <div class="header">
-       <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1280px-Pok%C3%A9_Ball_icon.svg.png"
-                alt="home">
-            <h1 class="titulo">PokeTeam</h1>
-        </div>
-        <div class="header-usuario">
-            <p id="nome_usuario">Olá,</p>
-        </div>
-    </div>
     <div class="pagina">
         <div id="barra_lateral" class="barra-lateral">
             <ul class="lista-paginas">
@@ -26,6 +16,10 @@
                 <a href="times.html"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokebola-icon-svg-download-png-4399494.png">Seus times</a>
                 <a><img src="https://www.iconpacks.net/icons/1/free-chart-icon-646-thumb.png"><b>Dashboard</b></a>
             </ul>
+            <div class="usuario">
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/account-white-icon.png">
+                <p id="nome_usuario"></p>
+            </div>
             <button onclick="limparSessao()" class="botao-sair">Sair</button>
         </div>
         <button id="botao_alternar" class="botao-alternar" onclick="alternarBarra()"><-</button>
@@ -35,14 +29,14 @@
             </div>
             <div class="kpis">
                 <div class="card">
-                    <p>A</p>
+                    <p>Tipo que mais aparece no seu time</p>
                     <div class="conteudoKpi">
                         <img class="kpiImg" src="">
-                        <h3>A</h3>
+                        <h3>Água</h3>
                     </div>
                 </div>
                 <div class="card">
-                    <p>B</p>
+                    <p></p>
                     <div class="conteudoKpi">
                         <img class="kpiImg" src="">
                         <h3>B</h3>
@@ -62,6 +56,9 @@
                         <h3>D</h3>
                     </div>
                 </div>
+            </div>
+            <div class="graficos">
+
             </div>
         </div>
     </div>
