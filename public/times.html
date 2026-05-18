@@ -28,7 +28,7 @@
                 <p>Crie um novo time</p>
                 <button onclick="criarTime()">+ Criar time</button>
             </div>
-            <div id="div_times"></div>
+            <div id="div_times" class="times"></div>
             <div class="janela" id="janela">
                 <div class="conteudo-janela">
                     <button onclick="fecharJanela()" class="botao-fechar">X</button>
@@ -347,25 +347,27 @@
                     var divTime = document.createElement("div")
                     var nomeTime = document.createElement("p")
                     var botaoDeletar = document.createElement("button")
+                    var divPokemons = document.createElement("div")
 
                     nomeTime.innerHTML = time.nome
                     botaoDeletar.innerHTML = "Deletar"
                     botaoDeletar.setAttribute("onclick", `deletarTime(${time.idEquipe})`)
-                    botaoDeletar.className = "botao-salvar"
+                    botaoDeletar.className = "botao-deletar"
                     divTime.className = "div-time"
+                    divPokemons.className = "div-pokemons"
 
                     divTime.appendChild(nomeTime)
+                    divTime.appendChild(divPokemons)
+                    divTime.appendChild(botaoDeletar)
                     divTimes.appendChild(divTime)
                     
-                    listarPokemonsPorEquipe(time.idEquipe, divTime, botaoDeletar)
-                    
-                    
+                    listarPokemonsPorEquipe(time.idEquipe, divPokemons)
                 }
             })
         })
     }
 
-    function listarPokemonsPorEquipe(idEquipe, divTime, botaoDeletar){
+    function listarPokemonsPorEquipe(idEquipe, divPokemons){
         fetch(`/pokemons/listar/${idEquipe}`, {
             method: "GET"
         })
@@ -380,11 +382,10 @@
                     nomePokemon.innerHTML = pokemon.nome + " - " + pokemon.tipo1 + " / " + pokemon.tipo2
 
                     divPokemon.appendChild(nomePokemon)
-                    divTime.appendChild(divPokemon)
+                    divPokemons.appendChild(divPokemon)
 
                     listarAtaquesPorPokemon(pokemon.idPokemon, divPokemon)
                 }
-                divTime.appendChild(botaoDeletar)
             })
         })
     }

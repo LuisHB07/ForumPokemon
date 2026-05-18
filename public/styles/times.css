@@ -116,6 +116,12 @@
     margin-top: auto;
 }
 
+.times{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .div-time{
     display: flex;
     flex-direction: column;
@@ -124,4 +130,22 @@
     border-radius: 8px;
     background-color: white;
     gap: 15px;
+}
+
+.div-pokemons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.botao-deletar{
+    font-family: '8BIT', sans-serif;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: auto;
 }

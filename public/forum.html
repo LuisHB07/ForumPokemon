@@ -33,10 +33,9 @@
                     <button onclick="fecharJanela()" class="botao-fechar">X</button>
                     <div class="conteudo-post">
                         Titulo do post: <input placeholder="Post 1" type="text" id="ipt_titulo"> 
-                        Selecione o time que você quer: <select id="sele_time_post">
-                            <option value="Time1">Time 1</option>
+                        Selecione o time que você quer: <select id="select_time_post">
                         </select>
-                        Descrição do seu post: <textarea placeholder="Descrição aqui..." id="text-descricao" class="desc-post"></textarea>
+                        Descrição do seu post: <textarea placeholder="Descrição aqui..." id="text_descricao" class="desc-post"></textarea>
                     </div>
                     <button onclick="postar()" class="botao-postar">Fazer post</button>
                 </div>
@@ -60,8 +59,149 @@
 }
     function fazerPost(){
         janela.style.display = "flex"
+        carregarTimesNoSelect()
     }
     function fecharJanela(){
         janela.style.display = "none"
     }
+
+    function carregarTimesNoSelect(){
+    var idUsuario = sessionStorage.ID_USUARIO
+
+    fetch(`/equipes/listar/${idUsuario}`, { method: "GET" })
+    .then(function(resposta){
+        resposta.json().then(function(lista){
+            var select = document.getElementById("select_time_post")
+            select.innerHTML = ""
+
+            for(let i = 0; i < lista.length; i++){
+                var time = lista[i]
+                var option = document.createElement("option")
+                option.value = time.idEquipe
+                option.innerHTML = time.nome
+                select.appendChild(option)
+            }
+        })
+    })
+}
+
+    function postar(){
+        var idUsuario = sessionStorage.ID_USUARIO
+        var titulo = ipt_titulo.value
+        var descricao = text_descricao.value
+        var fkEquipe = select_time_post.value
+
+        fetch(`/posts/publicar/${idUsuario}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify({
+                tituloServer: titulo,
+                descricaoServer: descricao,
+                fkEquipeServer: fkEquipe
+            })
+        }).then(function(resposta){
+            if(resposta.ok){
+                alert("Post publicado com sucesso!")
+                fecharJanela()
+                listarPosts()
+            }
+        })
+    }
+    function listarPosts(){
+        fetch("/posts/listar",{
+            method: "GET"
+        }).then(function(resposta){
+            resposta.json().then(function(lista){
+                var divPostagens = document.getElementById("div_postagens")
+                divPostagens.innerHTML = ""
+
+                for(let i = 0; i < lista.length; i++){
+                    var post = lista[i]
+
+                    var divPost = document.createElement("div")
+                    var titulo = document.createElement("h3")
+                    var autor = document.createElement("p")
+                    var equipe = document.createElement("p")
+                    var descricao = document.createElement("p")
+                    var botaoDeletar = document.createElement("button")
+
+                    titulo.innerHTML = post.titulo
+                    autor.innerHTML = "Por: " + post.nomeUsuario
+                    equipe.innerHTML = "Time: " + post.nomeEquipe
+                    descricao.innerHTML = post.descricao
+                    botaoDeletar.innerHTML = "Deletar"
+                    botaoDeletar.setAttribute("onclick", `deletarPost(${post.idPost})`)
+                    var divPokemons = document.createElement("div")
+
+                    divPost.className = "card-post"
+                    botaoDeletar.className = "botao-deletar"
+                    divPost.appendChild(titulo)
+                    divPost.appendChild(autor)
+                    divPost.appendChild(equipe)
+                    divPost.appendChild(divPokemons)
+                    divPost.appendChild(descricao)
+                    divPost.appendChild(botaoDeletar)
+                    divPostagens.appendChild(divPost)
+                    listarPokemonsPorEquipe(post.fkEquipe, divPokemons)
+                }
+            })
+        })
+    }
+    function listarPokemonsPorEquipe(idEquipe, divTime){
+        fetch(`/pokemons/listar/${idEquipe}`, {
+            method: "GET"
+        })
+        .then (function(resposta){
+            resposta.json().then(function(lista){
+                for(let i = 0; i < lista.length; i++){
+                    var pokemon = lista[i]
+
+                    var divPokemon = document.createElement("div")
+                    var nomePokemon = document.createElement("p")
+
+                    nomePokemon.innerHTML = pokemon.nome + " - " + pokemon.tipo1 + " / " + pokemon.tipo2
+
+                    divPokemon.appendChild(nomePokemon)
+                    divTime.appendChild(divPokemon)
+
+                    listarAtaquesPorPokemon(pokemon.idPokemon, divPokemon)
+                }
+
+            })
+        })
+    }
+
+    function listarAtaquesPorPokemon(idPokemon, divPokemon){
+        fetch(`/ataques/listar/${idPokemon}`, {
+            method: "GET"
+        })
+        .then(function(resposta){
+            resposta.json().then(function(lista){
+                console.log(lista)
+                for(let i = 0; i < lista.length; i++){
+                    var ataque = lista[i]
+
+                    var pokemonAtaque = document.createElement("p")
+                    
+                    pokemonAtaque.innerHTML = "Ataque: " + ataque.nome + " - Tipo: " + ataque.tipo + " - Categoria: " + ataque.categoria
+
+                    divPokemon.appendChild(pokemonAtaque)
+                }
+            })
+        })
+    }
+    function deletarPost(idPost){
+        fetch(`/posts/deletar/${idPost}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json"}
+        }).then(function(resposta){
+            if(resposta.ok){
+                alert("Post deletado!")
+                listarPosts()
+            }
+        })
+    }
+
+
+    listarPosts()
 </script>

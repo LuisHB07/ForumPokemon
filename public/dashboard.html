@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeTeam - Dashboard</title>
     <script src="js/sessao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles/logado.css">
     <link rel="stylesheet" href="styles/dashboard.css">
 </head>
@@ -29,36 +30,47 @@
             </div>
             <div class="kpis">
                 <div class="card">
-                    <p>Tipo que mais aparece no seu time</p>
+                    <p>Tipo que mais aparece no seu time:</p>
                     <div class="conteudoKpi">
                         <img class="kpiImg" src="">
                         <h3>Água</h3>
                     </div>
                 </div>
                 <div class="card">
-                    <p></p>
+                    <p>Categoria de ataque que mais aparece no seu time:</p>
                     <div class="conteudoKpi">
                         <img class="kpiImg" src="">
-                        <h3>B</h3>
+                        <h3>Especial</h3>
                     </div>
                 </div>
                 <div class="card">
-                    <p>C</p>
+                    <p>Seu dia da semana com mais posts:</p>
                     <div class="conteudoKpi">
                         <img class="kpiImg" src="">
-                        <h3>C</h3>
+                        <h3>Terça-feira</h3>
                     </div>
                 </div>
                 <div class="card">
-                    <p>D</p>
+                    <p>Total de times criados:</p>
                     <div class="conteudoKpi">
                         <img class="kpiImg" src="">
-                        <h3>D</h3>
+                        <h3>13</h3>
                     </div>
                 </div>
             </div>
             <div class="graficos">
-
+                <div class="grafico">
+                    <h3>Tipos de Pokémon no seu time</h3>
+                    <canvas id="grafico_tipos"></canvas>
+                </div>
+                <div class="grafico">
+                    <h3>Posts por dia da semana</h3>
+                    <canvas id="grafico_posts"></canvas>
+                </div>
+                <div class="grafico grafico-pizza">
+                    <h3>Categorias de ataque</h3>
+                    <canvas id="grafico_categorias"></canvas>
+                </div>
             </div>
         </div>
     </div>
@@ -67,6 +79,57 @@
 <script>
     nome_usuario.innerHTML += sessionStorage.NOME_USUARIO
     
+    const labelsTipos = ['Água', 'Fogo', 'Elétrico', 'Psíquico', 'Lutador', 'Dragão']
+
+    const data1 = {
+        labels: labelsTipos,
+        datasets: [{
+            label: 'Quantidade',
+            data: [4, 2, 3, 1, 2, 1],
+            backgroundColor: [
+                'blue',
+                'red',
+                'yellow',
+                'purple',
+                'darkred',
+                'black'
+            ],
+        }]
+    }
+
+    const config1 = { type: 'bar', data: data1, options: {} }
+
+    const labelsPosts = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom']
+
+    const data2 = {
+        labels: labelsPosts,
+        datasets: [{
+            label: 'Posts',
+            data: [3, 5, 2, 4, 1, 6, 2],
+            borderColor: 'red'
+        }]
+    }
+
+    const config2 = { type: 'line', data: data2, options: {} }
+
+    const data3 = {
+        labels: ['Físico', 'Especial', 'Status'],
+        datasets: [{
+            data: [45, 30, 25],
+            backgroundColor: [
+                'red',
+                'blue',
+                'yellow'
+            ]
+        }]
+    }
+
+    const config3 = { type: 'pie', data: data3, options: {} }
+
+    const myChart = new Chart(document.getElementById('grafico_tipos'), config1)
+    const myChart2 = new Chart(document.getElementById('grafico_posts'), config2)
+    const myChart3 = new Chart(document.getElementById('grafico_categorias'), config3)
+
     function alternarBarra(){
     barra_lateral.classList.toggle("fechada");
     if(barra_lateral.classList.contains("fechada")){

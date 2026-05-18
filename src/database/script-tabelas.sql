@@ -38,3 +38,12 @@ CREATE TABLE ataque(
     fkPokemon INT,
     CONSTRAINT fkPokemon FOREIGN KEY (fkPokemon) REFERENCES pokemon(idPokemon)
 );
+CREATE TABLE post (
+    idPost INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(45) NOT NULL,
+    descricao VARCHAR(500) NOT NULL,
+    fkUsuario INT,
+    fkEquipe INT,
+    CONSTRAINT fk_post_usuario FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
+    CONSTRAINT fk_post_equipe FOREIGN KEY (fkEquipe) REFERENCES equipe(idEquipe)
+);

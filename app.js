@@ -20,6 +20,7 @@ var usuarioRouter = require("./src/routes/usuarios");
 var equipeRouter = require("./src/routes/equipes");
 var pokemonRouter = require("./src/routes/pokemons");
 var ataqueRouter = require("./src/routes/ataques");
+var postRouter = require("./src/routes/posts");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -32,6 +33,7 @@ app.use("/usuarios", usuarioRouter);
 app.use("/equipes", equipeRouter);
 app.use("/pokemons", pokemonRouter);
 app.use("/ataques", ataqueRouter);
+app.use("/posts", postRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`
