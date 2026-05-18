@@ -17,7 +17,9 @@ var app = express();
 
 var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
-var equipeRoyter = require("./src/routes/equipes");
+var equipeRouter = require("./src/routes/equipes");
+var pokemonRouter = require("./src/routes/pokemons");
+var ataqueRouter = require("./src/routes/ataques");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,7 +29,9 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
-app.use("/equipes", equipesRouter);
+app.use("/equipes", equipeRouter);
+app.use("/pokemons", pokemonRouter);
+app.use("/ataques", ataqueRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`

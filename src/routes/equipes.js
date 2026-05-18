@@ -8,7 +8,7 @@ router.post("/cadastrar/:idUsuario", function(req, res){
 })
 
 router.get("/listar/:idUsuario", function(req, res){
-    equipeController.listarTimes(req, res)
+    equipeController.listarPorUsuario(req, res)
 })
 
 router.delete("/deletar/:idEquipe", function(req, res){
