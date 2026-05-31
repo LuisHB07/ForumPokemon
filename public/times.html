@@ -7,6 +7,9 @@
     <script src="js/sessao.js"></script>
     <link rel="stylesheet" href="styles/logado.css">
     <link rel="stylesheet" href="styles/times.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
     <div class="pagina">
@@ -33,153 +36,452 @@
                 <div class="conteudo-janela">
                     <button onclick="fecharJanela()" class="botao-fechar">X</button>
                     <div class="nomear-time">
-                        Nome do seu time: <input placeholder="Seu time legal" type="text" id="ipt_nome_time"> 
+                        Nome do seu time: <input placeholder="Seu time legal" type="text" id="ipt_nome_time">
                     </div>
+                    <!-- 1 -->
                     <div class="slot-pokemon">
-                    <br>Nome do Primeiro pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon1">
+                    <br>Nome do 1º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon1">
                         1º Tipo: <select id="sel_tipo1_pokemon1">
                             <option value="">Selecione o tipo</option>
-                                <option value="Normal">Normal</option>
-                                <option value="Fogo">Fogo</option>
-                                <option value="Água">Água</option>
-                                <option value="Grama">Grama</option>
-                                <option value="Elétrico">Elétrico</option>
-                                <option value="Gelo">Gelo</option>
-                                <option value="Lutador">Lutador</option>
-                                <option value="Veneno">Veneno</option>
-                                <option value="Terra">Terra</option>
-                                <option value="Voador">Voador</option>
-                                <option value="Psíquico">Psíquico</option>
-                                <option value="Inseto">Inseto</option>
-                                <option value="Pedra">Pedra</option>
-                                <option value="Fantasma">Fantasma</option>
-                                <option value="Dragão">Dragão</option>
-                                <option value="Sombrio">Sombrio</option>
-                                <option value="Aço">Aço</option>
-                                <option value="Fada">Fada</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
                         </select>
-                         2º Tipo: <select id="sel_tipo2_pokemon1">
+                        2º Tipo: <select id="sel_tipo2_pokemon1">
                             <option value="">Selecione o tipo</option>
-                                <option value="Normal">Normal</option>
-                                <option value="Fogo">Fogo</option>
-                                <option value="Água">Água</option>
-                                <option value="Grama">Grama</option>
-                                <option value="Elétrico">Elétrico</option>
-                                <option value="Gelo">Gelo</option>
-                                <option value="Lutador">Lutador</option>
-                                <option value="Veneno">Veneno</option>
-                                <option value="Terra">Terra</option>
-                                <option value="Voador">Voador</option>
-                                <option value="Psíquico">Psíquico</option>
-                                <option value="Inseto">Inseto</option>
-                                <option value="Pedra">Pedra</option>
-                                <option value="Fantasma">Fantasma</option>
-                                <option value="Dragão">Dragão</option>
-                                <option value="Sombrio">Sombrio</option>
-                                <option value="Aço">Aço</option>
-                                <option value="Fada">Fada</option>
-                        </select> <br>
-                        Primeiro Ataque: <input placeholder="Ex: Thunder" type="text" id="ipt_ataque1_pokemon1">
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        Primero Ataque: <input placeholder="Ex: Thunder" type="text" id="ipt_ataque1_pokemon1">
                         Tipo do ataque: <select id="sel_tipoataque1_pokemon1">
-                                <option value="">Selecione o tipo</option>
-                                <option value="Normal">Normal</option>
-                                <option value="Fogo">Fogo</option>
-                                <option value="Água">Água</option>
-                                <option value="Grama">Grama</option>
-                                <option value="Elétrico">Elétrico</option>
-                                <option value="Gelo">Gelo</option>
-                                <option value="Lutador">Lutador</option>
-                                <option value="Veneno">Veneno</option>
-                                <option value="Terra">Terra</option>
-                                <option value="Voador">Voador</option>
-                                <option value="Psíquico">Psíquico</option>
-                                <option value="Inseto">Inseto</option>
-                                <option value="Pedra">Pedra</option>
-                                <option value="Fantasma">Fantasma</option>
-                                <option value="Dragão">Dragão</option>
-                                <option value="Sombrio">Sombrio</option>
-                                <option value="Aço">Aço</option>
-                                <option value="Fada">Fada</option>
-                            </select>
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
                         Categoria do ataque: <select id="sel_categoria1_pokemon1">
-                            <option value="Físico">Físico</option> 
-                            <option value="Especial">Especial</option> 
+                            <option value="Físico">Físico</option>
+                            <option value="Especial">Especial</option>
                             <option value="Status">Status</option>
-                            </select> <br>
-                      
-                     <!-- 2 -->
-                      <div class="slot-pokemon">
-                      <br> Nome do Segundo pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon2">
+                        </select>
+                    </div>
+                    
+                    <!-- 2 -->
+                    <div class="slot-pokemon">
+                        <br>Nome do 2º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon2">
                         1º Tipo: <select id="sel_tipo1_pokemon2">
                             <option value="">Selecione o tipo</option>
-                                <option value="Normal">Normal</option>
-                                <option value="Fogo">Fogo</option>
-                                <option value="Água">Água</option>
-                                <option value="Grama">Grama</option>
-                                <option value="Elétrico">Elétrico</option>
-                                <option value="Gelo">Gelo</option>
-                                <option value="Lutador">Lutador</option>
-                                <option value="Veneno">Veneno</option>
-                                <option value="Terra">Terra</option>
-                                <option value="Voador">Voador</option>
-                                <option value="Psíquico">Psíquico</option>
-                                <option value="Inseto">Inseto</option>
-                                <option value="Pedra">Pedra</option>
-                                <option value="Fantasma">Fantasma</option>
-                                <option value="Dragão">Dragão</option>
-                                <option value="Sombrio">Sombrio</option>
-                                <option value="Aço">Aço</option>
-                                <option value="Fada">Fada</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
                         </select>
-                         2º Tipo: <select id="sel_tipo2_pokemon2">
+                        2º Tipo: <select id="sel_tipo2_pokemon2">
                             <option value="">Selecione o tipo</option>
-                                <option value="Normal">Normal</option>
-                                <option value="Fogo">Fogo</option>
-                                <option value="Água">Água</option>
-                                <option value="Grama">Grama</option>
-                                <option value="Elétrico">Elétrico</option>
-                                <option value="Gelo">Gelo</option>
-                                <option value="Lutador">Lutador</option>
-                                <option value="Veneno">Veneno</option>
-                                <option value="Terra">Terra</option>
-                                <option value="Voador">Voador</option>
-                                <option value="Psíquico">Psíquico</option>
-                                <option value="Inseto">Inseto</option>
-                                <option value="Pedra">Pedra</option>
-                                <option value="Fantasma">Fantasma</option>
-                                <option value="Dragão">Dragão</option>
-                                <option value="Sombrio">Sombrio</option>
-                                <option value="Aço">Aço</option>
-                                <option value="Fada">Fada</option>
-                        </select> <br>
-                        Primeiro Ataque: <input placeholder="Ex: Thunder" type="text" id="ipt_ataque1_pokemon2">
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        Primero Ataque: <input placeholder="Ex: Thunder" type="text" id="ipt_ataque1_pokemon2">
                         Tipo do ataque: <select id="sel_tipoataque1_pokemon2">
-                                <option value="">Selecione o tipo</option>
-                                <option value="Normal">Normal</option>
-                                <option value="Fogo">Fogo</option>
-                                <option value="Água">Água</option>
-                                <option value="Grama">Grama</option>
-                                <option value="Elétrico">Elétrico</option>
-                                <option value="Gelo">Gelo</option>
-                                <option value="Lutador">Lutador</option>
-                                <option value="Veneno">Veneno</option>
-                                <option value="Terra">Terra</option>
-                                <option value="Voador">Voador</option>
-                                <option value="Psíquico">Psíquico</option>
-                                <option value="Inseto">Inseto</option>
-                                <option value="Pedra">Pedra</option>
-                                <option value="Fantasma">Fantasma</option>
-                                <option value="Dragão">Dragão</option>
-                                <option value="Sombrio">Sombrio</option>
-                                <option value="Aço">Aço</option>
-                                <option value="Fada">Fada</option>
-                            </select>
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
                         Categoria do ataque: <select id="sel_categoria1_pokemon2">
-                            <option value="Físico">Físico</option> 
-                            <option value="Especial">Especial</option> 
+                            <option value="Físico">Físico</option>
+                            <option value="Especial">Especial</option>
                             <option value="Status">Status</option>
-                            </select> <br>
+                        </select>
                     </div>
+                    
+                    <!-- 3 -->
+                    <div class="slot-pokemon">
+                        <br>Nome do 3º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon3">
+                        1º Tipo: <select id="sel_tipo1_pokemon3">
+                        <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        2º Tipo: <select id="sel_tipo2_pokemon3">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        Primero Ataque: <input placeholder="Ex: Thunder" type="text" id="ipt_ataque1_pokemon3">
+                        Tipo do ataque: <select id="sel_tipoataque1_pokemon3">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        Categoria do ataque: <select id="sel_categoria1_pokemon3">
+                            <option value="Físico">Físico</option>
+                            <option value="Especial">Especial</option>
+                            <option value="Status">Status</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 4 -->
+                    <div class="slot-pokemon">
+                        <br>Nome do 4º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon4">
+                        1º Tipo: <select id="sel_tipo1_pokemon4">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        2º Tipo: <select id="sel_tipo2_pokemon4">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        Primero Ataque: <input placeholder="Ex: Thunder" type="text" id="ipt_ataque1_pokemon4">
+                        Tipo do ataque: <select id="sel_tipoataque1_pokemon4">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        Categoria do ataque: <select id="sel_categoria1_pokemon4">
+                            <option value="Físico">Físico</option>
+                            <option value="Especial">Especial</option>
+                            <option value="Status">Status</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 5 -->
+                    <div class="slot-pokemon">
+                        <br>Nome do 5º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon5">
+                        1º Tipo: <select id="sel_tipo1_pokemon5">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        2º Tipo: <select id="sel_tipo2_pokemon5">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        Primero Ataque: <input placeholder="Ex: Thunder" type="text" id="ipt_ataque1_pokemon5">
+                        Tipo do ataque: <select id="sel_tipoataque1_pokemon5">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        Categoria do ataque: <select id="sel_categoria1_pokemon5">
+                            <option value="Físico">Físico</option>
+                            <option value="Especial">Especial</option>
+                            <option value="Status">Status</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 6 -->
+                    <div class="slot-pokemon">
+                        <br>Nome do 6º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon6">
+                        1º Tipo: <select id="sel_tipo1_pokemon6">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        2º Tipo: <select id="sel_tipo2_pokemon6">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        Primero Ataque: <input placeholder="Ex: Thunder" type="text" id="ipt_ataque1_pokemon6">
+                        Tipo do ataque: <select id="sel_tipoataque1_pokemon6">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fogo">Fogo</option>
+                            <option value="Água">Água</option>
+                            <option value="Grama">Grama</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Gelo">Gelo</option>
+                            <option value="Lutador">Lutador</option>
+                            <option value="Veneno">Veneno</option>
+                            <option value="Terra">Terra</option>
+                            <option value="Voador">Voador</option>
+                            <option value="Psíquico">Psíquico</option>
+                            <option value="Inseto">Inseto</option>
+                            <option value="Pedra">Pedra</option>
+                            <option value="Fantasma">Fantasma</option>
+                            <option value="Dragão">Dragão</option>
+                            <option value="Sombrio">Sombrio</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Fada">Fada</option>
+                        </select>
+                        Categoria do ataque: <select id="sel_categoria1_pokemon6">
+                            <option value="Físico">Físico</option>
+                            <option value="Especial">Especial</option>
+                            <option value="Status">Status</option>
+                        </select>
+                    </div>
+                    
                     <button onclick="salvarTime()" class="botao-salvar">Salvar time</button>
                 </div>
             </div>
@@ -205,127 +507,115 @@
         janela.style.display = "none"
     }
 
-    function salvarTime(){
+    function salvarTime() {
+        let idUsuario = sessionStorage.ID_USUARIO
+        let nomeTime = ipt_nome_time.value
 
-        let dados = {
-        nomeTime: ipt_nome_time.value,
-
-        nomePokemon1: ipt_nome_pokemon1.value,
-        nomePokemon2: ipt_nome_pokemon2.value,
-        
-        tipagem1Pokemon1: sel_tipo1_pokemon1.value,
-        tipagem2Pokemon1: sel_tipo2_pokemon1.value,
-        
-        tipagem1Pokemon2: sel_tipo1_pokemon2.value,
-        tipagem2Pokemon2: sel_tipo2_pokemon2.value,
-        
-        nomeAtaquePokemon1: ipt_ataque1_pokemon1.value,
-        nomeAtaquePokemon2: ipt_ataque1_pokemon2.value,
-        
-        tipoAtaquePokemon1: sel_tipoataque1_pokemon1.value,
-        tipoAtaquePokemon2: sel_tipoataque1_pokemon2.value,
-        
-        categoriaAtaquePokemon1: sel_categoria1_pokemon1.value,
-        categoriaAtaquePokemon2: sel_categoria1_pokemon2.value,
-
-        idUsuario: sessionStorage.ID_USUARIO
-        }
-        cadastrarEquipe(dados)
-}
-    function cadastrarEquipe(dados){
-        fetch(`/equipes/cadastrar/${dados.idUsuario}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
+        let listaPokemons = [
+            { 
+                nome: ipt_nome_pokemon1.value, 
+                tipo1: sel_tipo1_pokemon1.value, 
+                tipo2: sel_tipo2_pokemon1.value, 
+                ataque: ipt_ataque1_pokemon1.value, 
+                tipoAtaque: sel_tipoataque1_pokemon1.value, 
+                categoriaAtaque: sel_categoria1_pokemon1.value 
+        },
+            { 
+                nome: ipt_nome_pokemon2.value, 
+                tipo1: sel_tipo1_pokemon2.value, 
+                tipo2: sel_tipo2_pokemon2.value, 
+                ataque: ipt_ataque1_pokemon2.value, 
+                tipoAtaque: sel_tipoataque1_pokemon2.value, 
+                categoriaAtaque: sel_categoria1_pokemon2.value 
+        },
+            { 
+                nome: ipt_nome_pokemon3.value, 
+                tipo1: sel_tipo1_pokemon3.value, 
+                tipo2: sel_tipo2_pokemon3.value, 
+                ataque: ipt_ataque1_pokemon3.value, 
+                tipoAtaque: sel_tipoataque1_pokemon3.value, 
+                categoriaAtaque: sel_categoria1_pokemon3.value 
             },
-            body: JSON.stringify({
-                nomeServer: dados.nomeTime
-            })
+            { 
+                nome: ipt_nome_pokemon4.value, 
+                tipo1: sel_tipo1_pokemon4.value, 
+                tipo2: sel_tipo2_pokemon4.value, 
+                ataque: ipt_ataque1_pokemon4.value, 
+                tipoAtaque: sel_tipoataque1_pokemon4.value, 
+                categoriaAtaque: sel_categoria1_pokemon4.value 
+            },
+            { 
+                nome: ipt_nome_pokemon5.value, 
+                tipo1: sel_tipo1_pokemon5.value, 
+                tipo2: sel_tipo2_pokemon5.value, 
+                ataque: ipt_ataque1_pokemon5.value, 
+                tipoAtaque: sel_tipoataque1_pokemon5.value, 
+                categoriaAtaque: sel_categoria1_pokemon5.value 
+            },
+            { 
+                nome: ipt_nome_pokemon6.value, 
+                tipo1: sel_tipo1_pokemon6.value, 
+                tipo2: sel_tipo2_pokemon6.value, 
+                ataque: ipt_ataque1_pokemon6.value, 
+                tipoAtaque: sel_tipoataque1_pokemon6.value, 
+                categoriaAtaque: sel_categoria1_pokemon6.value 
+            }
+        ]
+
+        cadastrarEquipe(idUsuario, nomeTime, listaPokemons)
+        alert('Time cadastrado com sucesso!')
+        fecharJanela()
+        listarTimes()
+    }
+
+    function cadastrarEquipe(idUsuario, nomeTime, listaPokemons){
+        fetch(`/equipes/cadastrar/${idUsuario}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nomeServer: nomeTime })
         })
         .then(function(resposta){
             resposta.json().then(function(resultado){
-                var idEquipe = resultado.insertId
-                cadastrarPokemon1(idEquipe, dados)
-            })
-        })
-    }
-    
-    function cadastrarPokemon1(idEquipe, dados){
-        fetch(`/pokemons/cadastrar/${idEquipe}`,{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                nomeServer: dados.nomePokemon1,
-                tipo1Server: dados.tipagem1Pokemon1,
-                tipo2Server: dados.tipagem2Pokemon1
-            })
-        })
-        .then(function(resposta){
-            resposta.json().then(function(resultado){
-                var idPokemon1 = resultado.insertId
-                cadastrarAtaquePokemon1(idPokemon1, idEquipe, dados)
-            })
-            })
-    }
-    function cadastrarAtaquePokemon1(idPokemon1, idEquipe, dados){
-        fetch(`/ataques/cadastrar/${idPokemon1}`,{
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                nomeServer: dados.nomeAtaquePokemon1,
-                tipoServer: dados.tipoAtaquePokemon1,
-                categoriaServer: dados.categoriaAtaquePokemon1
-            })
-        })
-            .then(function(resposta){
-                resposta.json().then(function(resultado){
-                cadastrarPokemon2(idEquipe, dados)
+                let idEquipe = resultado.insertId
+
+                for(let i = 0; i < listaPokemons.length; i++){
+                    cadastrarPokemon(idEquipe, listaPokemons[i])
+                }
             })
         })
     }
 
-    function cadastrarPokemon2(idEquipe, dados){
-        fetch(`/pokemons/cadastrar/${idEquipe}`,{
+    function cadastrarPokemon(idEquipe, pokemon){
+        fetch(`/pokemons/cadastrar/${idEquipe}`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                nomeServer: dados.nomePokemon2,
-                tipo1Server: dados.tipagem1Pokemon2,
-                tipo2Server: dados.tipagem2Pokemon2
+                nomeServer: pokemon.nome,
+                tipo1Server: pokemon.tipo1,
+                tipo2Server: pokemon.tipo2
             })
         })
         .then(function(resposta){
             resposta.json().then(function(resultado){
-                var idPokemon2 = resultado.insertId
-                cadastrarAtaquePokemon2(idPokemon2, dados)
+                let idPokemon = resultado.insertId
+                cadastrarAtaque(idPokemon, pokemon)
             })
         })
     }
 
-    function cadastrarAtaquePokemon2(idPokemon2, dados){
-        fetch(`/ataques/cadastrar/${idPokemon2}`,{
+    function cadastrarAtaque(idPokemon, pokemon){
+        fetch(`/ataques/cadastrar/${idPokemon}`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                nomeServer: dados.nomeAtaquePokemon2,
-                tipoServer: dados.tipoAtaquePokemon2,
-                categoriaServer: dados.categoriaAtaquePokemon2
+                nomeServer: pokemon.ataque,
+                tipoServer: pokemon.tipoAtaque,
+                categoriaServer: pokemon.categoriaAtaque
             })
         })
         .then(function(resposta){
             resposta.json().then(function(resultado){
-                console.log("Time salvo com sucesso!")
-                alert('Time cadastrado com sucesso!')
-                fecharJanela()
-                listarTimes()
+                console.log("Ataque cadastrado!")
             })
         })
     }
@@ -378,8 +668,9 @@
 
                     var divPokemon = document.createElement("div")
                     var nomePokemon = document.createElement("p")
+                    divPokemon.className = "pokemon-time"
 
-                    nomePokemon.innerHTML = pokemon.nome + " - " + pokemon.tipo1 + " / " + pokemon.tipo2
+                    nomePokemon.innerHTML = pokemon.nome + " - Tipo: " + pokemon.tipo1 + " / " + pokemon.tipo2 
 
                     divPokemon.appendChild(nomePokemon)
                     divPokemons.appendChild(divPokemon)
@@ -402,7 +693,7 @@
 
                     var pokemonAtaque = document.createElement("p")
                     
-                    pokemonAtaque.innerHTML = "Ataque: " + ataque.nome + " - Tipo: " + ataque.tipo + " - Categoria: " + ataque.categoria
+                    pokemonAtaque.innerHTML = "Ataque: " + ataque.nome + " - Tipo: " + ataque.tipo + " - Categoria do ataque: " + ataque.categoria
 
                     divPokemon.appendChild(pokemonAtaque)
                 }

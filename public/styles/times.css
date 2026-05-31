@@ -135,6 +135,12 @@
 .div-pokemons{
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.pokemon-time{
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
