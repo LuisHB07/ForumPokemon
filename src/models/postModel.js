@@ -11,8 +11,10 @@ function publicar(titulo, descricao, fkEquipe, idUsuario){
 
 function listar(){
     var instrucaoSql = `
-    SELECT p.idPost, p.titulo, p.descricao, p.fkEquipe, u.nome AS nomeUsuario, e.nome AS nomeEquipe, u.idUsuario AS idUsuario FROM post p 
-    JOIN usuario u ON p.fkUsuario = u.idUsuario JOIN equipe e ON p.fkEquipe = e.idEquipe;
+    SELECT p.idPost, p.titulo, p.descricao, p.fkEquipe, u.nome AS nomeUsuario, 
+    e.nome AS nomeEquipe, u.idUsuario AS idUsuario FROM post p 
+    JOIN usuario u ON p.fkUsuario = u.idUsuario 
+    JOIN equipe e ON p.fkEquipe = e.idEquipe;
     `
     console.log("Executando a instrução SQL: \n" + instrucaoSql)
     return database.executar(instrucaoSql)

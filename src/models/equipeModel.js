@@ -15,25 +15,33 @@ function listarPorUsuario(idUsuario){
     return database.executar(instrucaoSql)
 }
 
-async function deletar(idEquipe) {
+function deletar(idEquipe) {
     var instrucaoSql1 = `
-        DELETE ataque FROM ataque JOIN pokemon ON ataque.fkPokemon = pokemon.idPokemon WHERE pokemon.fkEquipe = ${idEquipe}
+    DELETE ataque FROM ataque 
+    JOIN pokemon ON ataque.fkPokemon = pokemon.idPokemon WHERE pokemon.fkEquipe = ${idEquipe}
     `
     var instrucaoSql2 = `
-        DELETE FROM pokemon WHERE fkEquipe = ${idEquipe}
+    DELETE FROM pokemon WHERE fkEquipe = ${idEquipe}
     `
     var instrucaoSql3 = `
-        DELETE FROM equipe WHERE idEquipe = ${idEquipe}
+    DELETE FROM post WHERE fkEquipe = ${idEquipe}
     `
-    console.log("Executando a instrução SQL 1: \n")
-    await database.executar(instrucaoSql1)
+    var instrucaoSql4 = `
+    DELETE FROM equipe WHERE idEquipe = ${idEquipe}
+    `
 
-    console.log("Executando a instrução SQL 2: \n")
-    await database.executar(instrucaoSql2)
-    
-    console.log("Executando a instrução SQL 3: \n")
-    return database.executar(instrucaoSql3)
+    return database.executar(instrucaoSql1)
+        .then(function(){
+            return database.executar(instrucaoSql2)
+        })
+        .then(function(){
+            return database.executar(instrucaoSql3)
+        })
+        .then(function(){
+            return database.executar(instrucaoSql4)
+        })
 }
+
 
 module.exports = {
     cadastrar,

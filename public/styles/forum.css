@@ -150,6 +150,19 @@
     background-color: white;
     gap: 15px;
 }
+
+.div-pokemons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pokemon-time{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .botao-deletar{
     font-family: '8BIT', sans-serif;
     background-color: red;
