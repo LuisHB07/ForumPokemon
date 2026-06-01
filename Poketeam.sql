@@ -34,6 +34,7 @@ CREATE TABLE post (
     idPost INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(45) NOT NULL,
     descricao VARCHAR(500) NOT NULL,
+    dataPost DATETIME DEFAULT NOW(),
     fkUsuario INT,
     fkEquipe INT,
     CONSTRAINT fk_post_usuario FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),

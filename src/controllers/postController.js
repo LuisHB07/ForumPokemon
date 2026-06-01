@@ -29,14 +29,14 @@ function listar(req, res){
     postModel.listar()
         .then(function(resultado){
             if(resultado.length > 0){
-                res.status(200).json(resultado);
+                res.status(200).json(resultado)
             } else {
-                res.status(204).json([]);
+                res.status(204).json([])
             }
         })
         .catch(function(erro){
-            console.log(erro);
-            res.status(500).json(erro.sqlMessage);
+            console.log(erro)
+            res.status(500).json(erro.sqlMessage)
         });
 }
 
