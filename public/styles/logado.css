@@ -63,7 +63,8 @@ body{
     display: flex;
     flex-direction: column;
     background: linear-gradient(110deg, red, black);
-    padding: 5px;
+    padding: 10px;
+    width: 15%;
     transition: width 0.5s ease, padding 0.5s ease;
     overflow: hidden;
 }
@@ -77,52 +78,62 @@ body{
     border: none;
     color: black;
     font-size: 20px;
+    margin-top: 7px;
     cursor: pointer;
     height: 10px;
+    font-size: 20px;
     background-color: rgb(226, 226, 226);
 }
 
-.lista-paginas{
+.lista-botao{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
     padding: 0px;
 }
 
-.lista-paginas a{
+.lista-botao button{
     display: flex;
     align-items: center;
     gap: 5px;
     font-family: '8BIT', sans-serif;
-    font-size: 12px;
+    font-size: 19px;
     color: white;
-    list-style: none;
     padding: 15px;
-    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.lista-paginas img{
-    width: 30px; 
-    height: 30px;
+.lista-botao img{
+    height: 50px;
+    width: 50px; 
 }
+
+.botao-lateral{
+    display: flex;
+    margin-left: 5px;
+}
+
 
 .usuario{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: auto;
+    margin-bottom: 15px;
     gap: 10px;
     color: white;
-    font-size: 20px;
+    font-size: 22px;
 }
 .usuario img{
-    height: 150px;
-    width: 150px;
+    height: 170px;
+    width: 170px;
 }
 
 .botao-sair{
     font-family: '8BIT', sans-serif;
-    font-size: 10px;
+    font-size: 20px;
     background-color: white;
     color: red;
     border: none;
