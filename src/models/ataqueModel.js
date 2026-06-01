@@ -11,7 +11,8 @@ function cadastrar(nome, tipo, categoria, idPokemon){
 
 function listarPorPokemon(idPokemon){
     var instrucaoSql = `
-        SELECT idAtaque, nome, tipo, categoria FROM ataque WHERE fkPokemon = ${idPokemon}
+        SELECT idAtaque, nome, tipo, categoria FROM ataque 
+        WHERE fkPokemon = ${idPokemon}
     `
     console.log("Executando a instrução SQL: \n" + instrucaoSql)
     return database.executar(instrucaoSql)

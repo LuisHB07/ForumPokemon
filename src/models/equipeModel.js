@@ -18,7 +18,8 @@ function listarPorUsuario(idUsuario){
 function deletar(idEquipe) {
     var instrucaoSql1 = `
     DELETE ataque FROM ataque 
-    JOIN pokemon ON ataque.fkPokemon = pokemon.idPokemon WHERE pokemon.fkEquipe = ${idEquipe}
+    JOIN pokemon ON ataque.fkPokemon = pokemon.idPokemon 
+    WHERE pokemon.fkEquipe = ${idEquipe}
     `
     var instrucaoSql2 = `
     DELETE FROM pokemon WHERE fkEquipe = ${idEquipe}

@@ -26,35 +26,35 @@
         <button id="botao_alternar" class="botao-alternar" onclick="alternarBarra()"><-</button>
         <div class="conteudo">
             <div class="titulo-dash">
-                <h2>Dashboard - seus times</h2><img class="seta" src="assets/img/setaTime.png" alt="">
+                <h2>Dashboard - seus times</h2>
             </div>
             <div class="kpis">
                 <div class="card">
                     <p>Tipo que mais aparece nos seus times:</p>
                     <div class="conteudoKpi">
                         <img class="kpiImg" src="">
-                        <h3>Água</h3>
+                        <h3 id="kpi_tipo"></h3>
                     </div>
                 </div>
                 <div class="card">
                     <p>Categoria de ataque que mais aparece nos seus times:</p>
                     <div class="conteudoKpi">
                         <img class="kpiImg" src="">
-                        <h3>Especial</h3>
+                        <h3 id="kpi_categoria"></h3>
                     </div>
                 </div>
                 <div class="card">
                     <p>Seu dia da semana com mais posts:</p>
                     <div class="conteudoKpi">
                         <img class="kpiImg" src="">
-                        <h3>Terça-feira</h3>
+                        <h3 id="kpi_dia"></h3>
                     </div>
                 </div>
                 <div class="card">
                     <p>Pokemon que mais aparece nos times da comunidade</p>
                     <div class="conteudoKpi">
                         <img class="kpiImg" src="">
-                        <h3>Incineroar</h3>
+                        <h3 id="kpi_pokemon"></h3>
                     </div>
                 </div>
             </div>
@@ -78,64 +78,123 @@
 </html>
 <script>
     nome_usuario.innerHTML += sessionStorage.NOME_USUARIO
-    
-    const labelsTipos = ['Água', 'Fogo', 'Elétrico', 'Psíquico', 'Lutador', 'Dragão']
-
-    const data1 = {
-        labels: labelsTipos,
-        datasets: [{
-            label: 'Quantidade',
-            data: [4, 2, 3, 1, 2, 1],
-            backgroundColor: [
-                'blue',
-                'red',
-                'yellow',
-                'purple',
-                'darkred',
-                'black'
-            ],
-        }]
-    }
-
-    const config1 = { type: 'bar', data: data1, options: {} }
-
-    const labelsPosts = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom']
-
-    const data2 = {
-        labels: labelsPosts,
-        datasets: [{
-            label: 'Posts',
-            data: [3, 5, 2, 4, 1, 6, 2],
-            borderColor: 'red'
-        }]
-    }
-
-    const config2 = { type: 'line', data: data2, options: {} }
-
-    const data3 = {
-        labels: ['Físico', 'Especial', 'Status'],
-        datasets: [{
-            data: [45, 30, 25],
-            backgroundColor: [
-                'red',
-                'blue',
-                'yellow'
-            ]
-        }]
-    }
-
-    const config3 = { type: 'pie', data: data3, options: {} }
-
-    const myChart = new Chart(document.getElementById('grafico_tipos'), config1)
-    const myChart2 = new Chart(document.getElementById('grafico_posts'), config2)
-    const myChart3 = new Chart(document.getElementById('grafico_categorias'), config3)
 
     function alternarBarra(){
-    barra_lateral.classList.toggle("fechada");
-    if(barra_lateral.classList.contains("fechada")){
-        botao_alternar.innerHTML = '->'
-    }else{
-        botao_alternar.innerHTML = '<-'
+        barra_lateral.classList.toggle("fechada");
+        if(barra_lateral.classList.contains("fechada")){
+            botao_alternar.innerHTML = '->'
+        }else{
+            botao_alternar.innerHTML = '<-'
+        }
     }
-}
+    function carregarDashboard(){
+        var idUsuario = sessionStorage.ID_USUARIO
+        carregarTipos(idUsuario)
+        carregarPostsPorDia(idUsuario)
+        carregarCategorias(idUsuario)
+        carregarPokemonMaisUsado()
+    }
+    function carregarTipos(idUsuario){
+        fetch(`/dashboard/tipos/${idUsuario}`, { method: "GET" })
+        .then(function(resposta){
+            resposta.json().then(function(lista){
+                var labels = []
+                var quantidades = []
+                for(let i = 0; i < lista.length; i++){
+                    labels.push(lista[i].tipo)
+                    quantidades.push(lista[i].quantidade)
+                }
+                const data1 = {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Quantidade',
+                        data: quantidades,
+                        backgroundColor: ['blue', 'red', 'yellow', 'purple', 'darkred', 'black', 'green', 'orange', 'pink', 'brown', 'gray', 'cyan', 'lime', 'magenta', 'gold', 'silver', 'navy', 'teal']
+                    }]
+                }
+                const config1 = { type: 'bar', data: data1, options: {} }
+                new Chart(document.getElementById('grafico_tipos'), config1)
+                // KPI - tipo que mais aparece
+                if(lista.length > 0){
+                    document.getElementById('kpi_tipo').innerHTML = lista[0].tipo
+                }
+            })
+        })
+    }
+    function carregarPostsPorDia(idUsuario){
+        fetch(`/dashboard/posts/${idUsuario}`, { method: "GET" })
+        .then(function(resposta){
+            resposta.json().then(function(lista){
+                var labels = []
+                var quantidades = []
+                var dias = {
+                    "Monday": "Segunda",
+                    "Tuesday": "Terça",
+                    "Wednesday": "Quarta",
+                    "Thursday": "Quinta",
+                    "Friday": "Sexta",
+                    "Saturday": "Sabádo",
+                    "Sunday": "Domingo"
+                }
+                for(let i = 0; i < lista.length; i++){
+                    labels.push(dias[lista[i].dia])
+                    quantidades.push(lista[i].quantidade)
+                }
+                const data2 = {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Posts',
+                        data: quantidades,
+                        borderColor: 'red',
+                        backgroundColor: 'rgba(255,0,0,0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                }
+                const config2 = { type: 'line', data: data2, options: {} }
+                new Chart(document.getElementById('grafico_posts'), config2)
+                // KPI - dia com mais posts
+                if(lista.length > 0){
+                    document.getElementById('kpi_dia').innerHTML =  dias[lista[0].dia]
+                }
+            })
+        })
+    }
+    function carregarCategorias(idUsuario){
+        fetch(`/dashboard/categorias/${idUsuario}`, { method: "GET" })
+        .then(function(resposta){
+            resposta.json().then(function(lista){
+                var labels = []
+                var quantidades = []
+                for(let i = 0; i < lista.length; i++){
+                    labels.push(lista[i].categoria)
+                    quantidades.push(lista[i].quantidade)
+                }
+                const data3 = {
+                    labels: labels,
+                    datasets: [{
+                        data: quantidades,
+                        backgroundColor: ['red', 'blue', 'yellow']
+                    }]
+                }
+                const config3 = { type: 'pie', data: data3, options: {} }
+                new Chart(document.getElementById('grafico_categorias'), config3)
+                // KPI - categoria que mais aparece
+                if(lista.length > 0){
+                    document.getElementById('kpi_categoria').innerHTML = lista[0].categoria
+                }
+            })
+        })
+    }
+    function carregarPokemonMaisUsado(){
+        fetch(`/dashboard/comunidade`, { method: "GET" })
+        .then(function(resposta){
+            resposta.json().then(function(lista){
+                if(lista.length > 0){
+                    document.getElementById('kpi_pokemon').innerHTML = lista[0].nome
+                }
+            })
+        })
+    }
+carregarDashboard()
 </script>

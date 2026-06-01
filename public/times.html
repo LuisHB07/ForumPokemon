@@ -40,7 +40,7 @@
                     </div>
                     <!-- 1 -->
                     <div class="slot-pokemon">
-                    <br>Nome do 1º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon1">
+                    Nome do 1º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon1">
                         1º Tipo: <select id="sel_tipo1_pokemon1">
                             <option value="">Selecione o tipo</option>
                             <option value="Normal">Normal</option>
@@ -111,10 +111,9 @@
                             <option value="Status">Status</option>
                         </select>
                     </div>
-                    
                     <!-- 2 -->
                     <div class="slot-pokemon">
-                        <br>Nome do 2º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon2">
+                        Nome do 2º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon2">
                         1º Tipo: <select id="sel_tipo1_pokemon2">
                             <option value="">Selecione o tipo</option>
                             <option value="Normal">Normal</option>
@@ -188,7 +187,7 @@
                     
                     <!-- 3 -->
                     <div class="slot-pokemon">
-                        <br>Nome do 3º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon3">
+                        Nome do 3º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon3">
                         1º Tipo: <select id="sel_tipo1_pokemon3">
                         <option value="">Selecione o tipo</option>
                             <option value="Normal">Normal</option>
@@ -262,7 +261,7 @@
                     
                     <!-- 4 -->
                     <div class="slot-pokemon">
-                        <br>Nome do 4º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon4">
+                        Nome do 4º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon4">
                         1º Tipo: <select id="sel_tipo1_pokemon4">
                             <option value="">Selecione o tipo</option>
                             <option value="Normal">Normal</option>
@@ -336,7 +335,7 @@
                     
                     <!-- 5 -->
                     <div class="slot-pokemon">
-                        <br>Nome do 5º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon5">
+                        Nome do 5º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon5">
                         1º Tipo: <select id="sel_tipo1_pokemon5">
                             <option value="">Selecione o tipo</option>
                             <option value="Normal">Normal</option>
@@ -410,7 +409,7 @@
                     
                     <!-- 6 -->
                     <div class="slot-pokemon">
-                        <br>Nome do 6º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon6">
+                        Nome do 6º pokemon: <input placeholder="Pikachu" type="text" id="ipt_nome_pokemon6">
                         1º Tipo: <select id="sel_tipo1_pokemon6">
                             <option value="">Selecione o tipo</option>
                             <option value="Normal">Normal</option>
@@ -563,9 +562,11 @@
         ]
 
         cadastrarEquipe(idUsuario, nomeTime, listaPokemons)
-        alert('Time cadastrado com sucesso!')
-        fecharJanela()
-        listarTimes()
+        setTimeout(() => {
+            alert('Time cadastrado com sucesso!')
+            fecharJanela()
+            listarTimes()
+        }, "500")
     }
 
     function cadastrarEquipe(idUsuario, nomeTime, listaPokemons){

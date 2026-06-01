@@ -6,7 +6,7 @@ function buscarTipo1(idUsuario){
         FROM pokemon p
         JOIN equipe e ON p.fkEquipe = e.idEquipe
         WHERE e.fkUsuario = ${idUsuario}
-        AND tipo1 IS NOT NULL
+        AND tipo1 != ''
         GROUP BY tipo1
         ORDER BY quantidade DESC
     `
@@ -20,7 +20,7 @@ function buscarTipo2(idUsuario){
         FROM pokemon p
         JOIN equipe e ON p.fkEquipe = e.idEquipe
         WHERE e.fkUsuario = ${idUsuario}
-        AND tipo2 IS NOT NULL
+        AND tipo2 != ''
         GROUP BY tipo2
         ORDER BY quantidade DESC
     `
@@ -34,7 +34,7 @@ function buscarPostsPorDia(idUsuario){
         FROM post
         WHERE fkUsuario = ${idUsuario}
         GROUP BY dia
-        ORDER BY WEEKDAY(dataPost)
+        ORDER BY MIN(WEEKDAY(dataPost))
     `
     console.log("Executando a instrução SQL: \n" + instrucaoSql)
     return database.executar(instrucaoSql)
@@ -48,6 +48,7 @@ function buscarCategorias(idUsuario){
         JOIN equipe e ON p.fkEquipe = e.idEquipe
         WHERE e.fkUsuario = ${idUsuario}
         GROUP BY a.categoria
+        ORDER BY quantidade DESC
     `
     console.log("Executando a instrução SQL: \n" + instrucaoSql)
     return database.executar(instrucaoSql)

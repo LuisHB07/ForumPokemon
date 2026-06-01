@@ -62,7 +62,7 @@
     display: flex;
     flex-direction: column;
     font-family: '8BIT', sans-serif; 
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: white;
     border: 4px solid red;
     border-radius: 10px;
     overflow-y: auto;
@@ -70,6 +70,7 @@
     height: 75%;
     padding: 10px;
     line-height: 2.3;
+    gap: 12px;
 }
 .conteudo-janela input{
     width: 150px;
@@ -130,6 +131,11 @@
     border-radius: 8px;
     background-color: white;
     gap: 15px;
+}
+
+.slot-pokemon{
+    padding: 10px;
+    border: 3px solid black;
 }
 
 .div-pokemons{
