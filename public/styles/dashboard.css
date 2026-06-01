@@ -71,3 +71,11 @@
     max-height: 450px;
     max-width: 550px;
 }
+.grafico-linha{
+    max-height: 400px;
+    max-width: 750px;
+}
+.grafico-barra{
+    max-height: 550px;
+    max-width: 550px;
+}

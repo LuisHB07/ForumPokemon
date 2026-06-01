@@ -27,12 +27,12 @@
 
 .criar-post p{
     font-family: '8BIT', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .criar-post button{
     font-family: '8BIT', sans-serif;
-    font-size: 10px;
+    font-size: 15px;
     background-color: red;
     color: white;
     border: none;
@@ -138,17 +138,19 @@
 .postagens{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .card-post{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    align-items: center;
+    padding: 20px;
     border: 3px solid red;
     border-radius: 8px;
     background-color: white;
     gap: 15px;
+    font-size: 20px;
 }
 
 .div-pokemons{
@@ -160,7 +162,12 @@
 .pokemon-time{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+    background-color: rgba(255, 100, 0, 0.3);
+    border: 3px solid black;
+    padding: 10px;
+    width: 1000px;
+    line-height: 1.5;
 }
 
 .botao-deletar{
@@ -172,5 +179,5 @@
     padding: 15px;
     cursor: pointer;
     align-self: center;
-    margin-top: auto;
+    margin-top: 10px;
 }

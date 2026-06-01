@@ -671,7 +671,8 @@
                     var nomePokemon = document.createElement("p")
                     divPokemon.className = "pokemon-time"
 
-                    nomePokemon.innerHTML = pokemon.nome + " - Tipo: " + pokemon.tipo1 + " / " + pokemon.tipo2 
+                    nomePokemon.innerHTML = ` ${pokemon.nome} <br>
+                    Tipo: ${pokemon.tipo1}/${pokemon.tipo2}` 
 
                     divPokemon.appendChild(nomePokemon)
                     divPokemons.appendChild(divPokemon)
@@ -694,8 +695,9 @@
 
                     var pokemonAtaque = document.createElement("p")
                     
-                    pokemonAtaque.innerHTML = "Ataque: " + ataque.nome + " - Tipo: " + ataque.tipo + " - Categoria do ataque: " + ataque.categoria
-
+                    pokemonAtaque.innerHTML = `Ataque: ${ataque.nome} <br>
+                    Tipo: ${ataque.tipo} - Categoria do ataque: ${ataque.categoria}`
+                    
                     divPokemon.appendChild(pokemonAtaque)
                 }
             })
