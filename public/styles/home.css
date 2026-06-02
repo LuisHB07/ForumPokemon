@@ -171,8 +171,8 @@
 }
 
 .sobre-conteudo img{
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     align-self: center;
 }
 
@@ -185,10 +185,11 @@
 
 .sobre-conteudo p {
     font-family: '8BIT', sans-serif;
-    font-size: 10px;
+    font-size: 14px;
     color: lightgray;
     line-height: 2.2;
 }
+
 .pokedex {
     position: absolute;
     top: 12px;
