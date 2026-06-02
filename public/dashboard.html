@@ -106,16 +106,45 @@
             resposta.json().then(function(lista){
                 var labels = []
                 var quantidades = []
+                var coresTipos = {
+                    'Água': '#6390F0',
+                    'Fogo': '#EE8130',
+                    'Elétrico': '#F7D02C',
+                    'Psíquico': '#C6B7F5',
+                    'Lutador': '#C22E28',
+                    'Dragão': '#6F35FC',
+                    'Grama': '#7AC74C',
+                    'Inseto': '#A6B91A',
+                    'Fada': '#F95587',
+                    'Veneno': '#A98FF3',
+                    'Normal': '#B7B7CE',
+                    'Gelo': '#96D9D6',
+                    'Pedra': '#A8A77A',
+                    'Fantasma': '#735797',
+                    'Terra': '#E2BF65',
+                    'Voador': '#B6A136',
+                    'Sombrio': '#705746',
+                    'Aço': '#B8B8D0'
+                }
+                var cores = []
                 for(let i = 0; i < lista.length; i++){
-                    labels.push(lista[i].tipo)
-                    quantidades.push(lista[i].quantidade)
+                    var tipo = lista[i].tipo
+                    var indice = labels.indexOf(tipo)
+
+                    if(indice == -1){
+                        labels.push(tipo)
+                        quantidades.push(lista[i].quantidade)
+                        cores.push(coresTipos[tipo])
+                    } else {
+                        quantidades[indice] += lista[i].quantidade
+                    }
                 }
                 const data1 = {
                     labels: labels,
                     datasets: [{
                         label: 'Quantidade',
                         data: quantidades,
-                        backgroundColor: ['blue', 'red', 'yellow', 'purple', 'darkred', 'black', 'green', 'orange', 'pink', 'brown', 'gray', 'cyan', 'lime', 'magenta', 'gold', 'silver', 'navy', 'teal']
+                        backgroundColor: cores
                     }]
                 }
                 const config1 = { type: 'bar', data: data1, options: {} }
@@ -180,7 +209,7 @@
                     labels: labels,
                     datasets: [{
                         data: quantidades,
-                        backgroundColor: ['red', 'blue', 'yellow']
+                        backgroundColor: ['#C22E28', '#6390F0', '#F7D02C']
                     }]
                 }
                 const config3 = { type: 'pie', data: data3, options: {} }
