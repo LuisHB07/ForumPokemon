@@ -155,6 +155,9 @@
                 }
             })
         })
+        .catch(function(erro){
+        console.log(erro)
+        })
     }
     function carregarPostsPorDia(idUsuario){
         fetch(`/dashboard/posts/${idUsuario}`, { method: "GET" })
@@ -194,6 +197,9 @@
                 }
             })
         })
+        .catch(function(erro){
+        console.log(erro)
+        })
     }
     function carregarCategorias(idUsuario){
         fetch(`/dashboard/categorias/${idUsuario}`, { method: "GET" })
@@ -220,6 +226,9 @@
                 }
             })
         })
+        .catch(function(erro){
+        console.log(erro)
+        })
     }
     function carregarPokemonMaisUsado(){
         fetch(`/dashboard/comunidade`, { method: "GET" })
@@ -229,6 +238,9 @@
                     document.getElementById('kpi_pokemon').innerHTML = lista[0].nome
                 }
             })
+        })
+        .catch(function(erro){
+        console.log(erro)
         })
     }
 carregarDashboard()

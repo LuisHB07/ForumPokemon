@@ -590,6 +590,9 @@
                 }
             })
         })
+        .catch(function(erro){
+        console.log(erro)
+        })
     }
 
     function cadastrarPokemon(idEquipe, pokemon){
@@ -608,6 +611,9 @@
                 cadastrarAtaque(idPokemon, pokemon)
             })
         })
+        .catch(function(erro){
+        console.log(erro)
+        })
     }
 
     function cadastrarAtaque(idPokemon, pokemon){
@@ -624,6 +630,9 @@
             resposta.json().then(function(resultado){
                 console.log("Ataque cadastrado!")
             })
+        })
+        .catch(function(erro){
+        console.log(erro)
         })
     }
 
@@ -662,6 +671,9 @@
                 }
             })
         })
+        .catch(function(erro){
+        console.log(erro)
+        })
     }
 
     function listarPokemonsPorEquipe(idEquipe, divPokemons){
@@ -687,6 +699,9 @@
                 }
             })
         })
+        .catch(function(erro){
+        console.log(erro)
+        })
     }
 
     function listarAtaquesPorPokemon(idPokemon, divPokemon){
@@ -707,6 +722,9 @@
                     divPokemon.appendChild(pokemonAtaque)
                 }
             })
+        })
+        .catch(function(erro){
+        console.log(erro)
         })
     }
 

@@ -89,7 +89,10 @@
             }
         })
     })
-}
+    .catch(function(erro){
+        console.log(erro)
+        })
+    }
 
     function postar(){
         var idUsuario = sessionStorage.ID_USUARIO
@@ -111,6 +114,9 @@
                 fecharJanela()
                 listarPosts()
             }
+        })
+        .catch(function(erro){
+        console.log(erro)
         })
     }
     function listarPosts(){
@@ -160,7 +166,11 @@
                 }
             })
         })
+        .catch(function(erro){
+        console.log(erro)
+        })
     }
+
     function listarPokemonsPorEquipe(idEquipe, divTime){
         fetch(`/pokemons/listar/${idEquipe}`, {
             method: "GET"
@@ -185,6 +195,9 @@
 
             })
         })
+        .catch(function(erro){
+        console.log(erro)
+        })
     }
 
     function listarAtaquesPorPokemon(idPokemon, divPokemon){
@@ -206,6 +219,9 @@
                 }
             })
         })
+        .catch(function(erro){
+        console.log(erro)
+        })
     }
     function deletarPost(idPost){
         fetch(`/posts/deletar/${idPost}`, {
@@ -216,6 +232,9 @@
                 alert("Post deletado!")
                 listarPosts()
             }
+        })
+        .catch(function(erro){
+        console.log(erro)
         })
     }
 
